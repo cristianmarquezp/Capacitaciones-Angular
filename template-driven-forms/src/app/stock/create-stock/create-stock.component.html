@@ -1,13 +1,22 @@
 <h2>Create Stock Form</h2>
 <div class="form-group">
     <form (ngSubmit)="createStock()">
+        <div>
+            El siguiente elemento cambia de verde a rojo cuando es invalido
+        </div>
         <div class="stock-name">
-            <input type="text" placeholder="Stock Name" name="stockName" [(ngModel)]="stock.name">
+            <input type="text" placeholder="Stock Name" required name="stockName" [(ngModel)]="stock.name">
+        </div>
+        <div>
+            El siguiente elemento cambia de verde a rojo cuando haya sido modificado
         </div>
         <div class="stock-code">
             <input type="text" placeholder="Stock Code" name="stockCode" [(ngModel)]="stock.code">
         </div>
-        <div class="stock-code">
+        <div>
+            El siguiente elemento cambia de verde a rojo cuando es visitado por el usuario, independientemente de que hay algun cambio o no
+        </div>
+        <div class="stock-price">
             <input type="number" placeholder="Stock Price" name="stockPrice" [ngModel]="stock.price"
                 (ngModelChange)="setStockPrice($event)">
         </div>
@@ -16,7 +25,7 @@
                 <option value="NYSE">NYSE</option>
                 <option value="NASDAQ">NASDAQ</option>
                 <option value="OTHER">OTHER</option>
-            </select>
+                </select>
         </div>
         <div class="stock-confirm">
             <input type="checkbox" name="stockConfirm" [(ngModel)]="confirmed">
@@ -26,5 +35,6 @@
     </form>
 </div>
 <h4>Stock Name is {{stock | json}}</h4>
+<h4>Data has been confirmed: {{confirmed}}</h4>
 
 
