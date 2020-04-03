@@ -8,7 +8,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'reactive-forms';
-
   registrationForm = new FormGroup({
     userName: new FormControl('cristian'),
     password: new FormControl(''),
