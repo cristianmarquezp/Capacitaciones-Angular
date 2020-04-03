@@ -2,23 +2,38 @@
   <h2>Formulario de registro</h2>
   <form [formGroup]="registrationForm">
     <div class="form-group">
-      <label >Usuario</label>
+      <label>Usuario</label>
       <input formControlName="userName" type="text" class="form-control">
     </div>
 
-  <div class="form-grup">
-    <label >contraseña</label>
-    <input formControlName="password" type="text" class="form-control">
-  </div>
-  <div class="form-grup">
-    <label >Confirmar contraseña</label>
-    <input formControlName="confirmPassword" type="text" class="form-control">
-  </div>
-  
-  <button class="btn btn-primary" type="submit">Register</button>
+    <div class="form-grup">
+      <label>contraseña</label>
+      <input formControlName="password" type="text" class="form-control">
+    </div>
+    <div class="form-grup">
+      <label>Confirmar contraseña</label>
+      <input formControlName="confirmPassword" type="text" class="form-control">
+    </div>
+
+    <div formGroupName="address">
+      <div class="form-grup">
+        <label>Ciudad</label>
+        <input formControlName="city" type="text" class="form-control">
+      </div>
+
+      <div class="form-grup">
+        <label>Stado</label>
+        <input formControlName="state" type="text" class="form-control">
+      </div>
+
+      <div class="form-grup">
+        <label>Codigo Postal</label>
+        <input formControlName="postalCode" type="text" class="form-control">
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Register</button>
 
   </form>
   {{registrationForm.value | json}}
 </div>
-
-
